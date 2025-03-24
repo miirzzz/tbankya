@@ -1,15 +1,176 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Перенаправление</title>
-    
-    <!-- Здесь будет код Яндекс.Метрики -->
-    
-    <script>
-        window.location.href = 'https://trk.ppdu.ru/click/wReW0ofH?erid=2SDnjbzCxfeЬ';
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mirz</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Убрали иконку сайта -->
+    <!-- <link rel="icon" href="path/to/your/favicon.ico" type="image/x-icon"> -->
 </head>
 <body>
+    <!-- Размытое фоновое изображение -->
+    <div class="bg-image" id="bgImage"></div>
+    
+    <!-- Начальный экран -->
+    <div class="enter-screen" id="enterScreen">
+        <div class="glass-card">
+            <img src="https://i.pinimg.com/736x/47/0e/0c/470e0ca6fc2ca66a5674e96a6cfbcf00.jpg" alt="mirz logo" class="logo">
+            <div class="enter-text">click to enter</div>
+        </div>
+    </div>
+
+    <!-- Основной профиль -->
+    <div class="profile-container hidden" id="profileContent">
+        <div class="profile-main glass-card">
+            <!-- Баннер -->
+            <div class="profile-banner">
+                <img src="https://i.pinimg.com/736x/8e/4d/50/8e4d50da8ff9df63013cf2f4f2905d79.jpg" alt="Profile Banner">
+            </div>
+            
+            <div class="profile-header">
+                <div class="avatar-section">
+                    <img src="image.png" alt="mirz" class="avatar">
+                </div>
+                
+                <div class="profile-info">
+                    <h1 class="username">mirz</h1>
+                    <p class="bio">Занимаюсь редуксами в гта с 2021 года. Беру заказы любой сложности</p>
+                </div>
+                
+                <!-- Исправляем кнопки действий -->
+                <div class="action-buttons">
+                    <button class="action-button" id="reviewsButton">REVIEWS</button>
+                    <button class="action-button" id="portfolioButton">PORTFOLIO</button>
+                    <button class="action-button primary" id="orderButton">ЗАКАЗАТЬ РЕДУКС</button>
+                </div>
+            </div>
+
+            <!-- Перемещаем меню и соц.сети под баннер -->
+            <div class="social-links">
+                <div class="social-icons-group">
+                    <a href="https://discord.gg/dfNczbDwPD" class="social-icon" target="_blank">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="https://t.me/miirzzz" class="social-icon" target="_blank">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@mirzrdx" class="social-icon" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.twitch.tv/mirzys" class="social-icon" target="_blank">
+                        <i class="fab fa-twitch"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Статистика -->
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Reviews</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2+</span>
+                    <span class="stat-label">Years</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">Users</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Модальные окна -->
+        <div class="modal hidden" id="worksModal">
+            <div class="modal-content glass-card">
+                <div class="modal-header">
+                    <h2>Recent Works</h2>
+                    <button class="close-button">&times;</button>
+                </div>
+                <div class="yapx-grid">
+                    <!-- Здесь будут ваши работы -->
+                </div>
+            </div>
+        </div>
+
+        <div class="modal hidden" id="reviewsModal">
+            <div class="modal-content glass-card">
+                <div class="modal-header">
+                    <h2>Reviews</h2>
+                    <button class="close-button">&times;</button>
+                </div>
+                <div class="reviews-container">
+                    <!-- Здесь будут ваши отзывы -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Добавляем форму заказа (после профиля, перед закрывающим тегом body) -->
+    <div class="order-form-modal hidden" id="orderFormModal">
+        <div class="order-form-container glass-card">
+            <div class="order-form-header">
+                <h2>Заказать Редукс</h2>
+                <button class="order-form-close" id="closeOrderForm">&times;</button>
+            </div>
+            <div class="order-form-content">
+                <form id="reduxOrderForm">
+                    <div class="form-group">
+                        <label for="taskDescription">Техническое задание</label>
+                        <textarea id="taskDescription" placeholder="Опишите, что нужно реализовать в редуксе..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="deadline">Сроки выполнения</label>
+                        <input type="text" id="deadline" placeholder="Укажите желаемые сроки..." required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budget">Бюджет</label>
+                        <input type="text" id="budget" placeholder="Укажите ваш бюджет..." required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Выберите контакт для связи</label>
+                        <div class="contact-options">
+                            <div class="contact-option telegram" id="telegramOption">
+                                <i class="fab fa-telegram"></i>
+                                <span>Telegram</span>
+                            </div>
+                            <div class="contact-option discord" id="discordOption">
+                                <i class="fab fa-discord"></i>
+                                <span>Discord</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact">Введите ваш контакт</label>
+                        <input type="text" id="contact" placeholder="Например: @username" required>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="button" class="submit-btn" id="cancelOrder">Отмена</button>
+                        <button type="submit" class="submit-btn primary">Отправить заказ</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Уведомление об успешной отправке - обновленная структура -->
+    <div class="notification-modal hidden" id="successNotification">
+        <button class="close-button" id="closeNotification">&times;</button>
+        <!-- Содержимое будет добавлено через JavaScript -->
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,1180 @@
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0a0a;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    min-height: 100vh;
+    overflow: hidden;
+    cursor: default;
+    user-select: none;
+}
+
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    letter-spacing: 3px;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 5rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.description {
+    font-size: 1.2rem;
+    opacity: 0.7;
+    letter-spacing: 1px;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    letter-spacing: 2px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 6rem;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-radius: 4px;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+}
+
+.project-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.project-card p {
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+}
+
+.view-project {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.view-project:hover {
+    opacity: 1;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 6rem 0;
+}
+
+.contact-info h2,
+.contact-form h2 {
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+.contact-details {
+    opacity: 0.7;
+    margin-top: 2rem;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: rgba(255, 255, 255, 0.03);
+    border: none;
+    padding: 1rem;
+    color: #ffffff;
+    font-family: inherit;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.contact-form button {
+    background: #ffffff;
+    color: #111111;
+    border: none;
+    padding: 1rem;
+    font-family: inherit;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.contact-form button:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Стеклянный эффект */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Начальный экран */
+.enter-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.enter-screen .glass-card {
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.enter-screen .glass-card:hover {
+    transform: scale(1.02);
+}
+
+.enter-text {
+    font-size: 0.9em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Основной профиль */
+.profile-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-main {
+    width: 660px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    filter: grayscale(100%);
+}
+
+.profile-banner {
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+}
+
+.profile-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-header {
+    position: relative;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+.avatar-section {
+    margin-top: -45px;
+    position: relative;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #000000;
+    border: 3px solid #0a0a0a;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.avatar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: none; /* Убираем рамку у самого изображения */
+}
+
+.profile-info {
+    margin-top: 10px;
+}
+
+.username {
+    font-size: 1.4em;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 4px;
+}
+
+.bio {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9em;
+}
+
+/* Обновляем статистику */
+.stats {
+    display: flex;
+    justify-content: space-evenly; /* Равномерно распределяем 4 элемента */
+    padding: 25px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.stat-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* для псевдоэлемента разделителя */
+}
+
+.stat-number {
+    font-size: 1.4em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 300;
+    white-space: nowrap; /* Запрещаем перенос на новую строку */
+}
+
+/* Убираем псевдоэлемент, так как он не работает корректно */
+.stat-item::after {
+    display: none;
+}
+
+/* Модальные окна */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: color 0.2s ease;
+}
+
+.close-button:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Анимации */
+.hidden {
+    display: none !important;
+}
+
+.fade-in {
+    animation: fadeIn 0.2s ease-out forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+}
+
+/* Навигационные кнопки */
+.profile-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    padding: 0 30px;
+}
+
+.nav-button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.nav-button:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    color: rgba(255, 255, 255, 1);
+}
+
+/* Секции работ и отзывов */
+.portfolio,
+.reviews {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 30px;
+    border-radius: 20px;
+    z-index: 10;
+}
+
+/* Заголовок секции */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Кнопка закрытия */
+.close-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: opacity 0.3s ease;
+}
+
+.close-button:hover {
+    opacity: 0.7;
+}
+
+/* Сетка портфолио */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.portfolio-item {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Отзывы */
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.review-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.review-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.review-content {
+    flex: 1;
+}
+
+.review-content h3 {
+    margin-bottom: 5px;
+}
+
+/* Портфолио и отзывы стили добавить здесь */
+
+/* Обновляем социальные иконки */
+.social-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social-icons-group {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.social-icon:hover {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
+    transform: translateY(-2px);
+}
+
+/* Добавляем стили для медиа партнеров */
+.media-partners {
+    display: none; /* Полностью скрываем раздел медиа-партнеров */
+}
+
+.partners-carousel,
+.partners-carousel-content,
+.partner-track,
+.partner-card,
+.partner-avatar,
+.partner-info,
+.partner-name,
+.partner-subs {
+    display: none; /* Скрываем все элементы, связанные с каруселью */
+}
+
+/* Удаляем все анимации карусели */
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes scrollCarousel {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(0); }
+}
+
+/* Применяем grayscale только для определенных частей (баннер, аватар, инфо, статистика) */
+.profile-banner,
+.avatar-section,
+.profile-info,
+.social-links,
+.stats {
+    filter: none;
+}
+
+/* А медиа-партнерам явно указываем, что фильтр не применяется */
+.media-partners {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    height: auto;
+    min-height: 140px;
+    filter: grayscale(0); /* Явно отменяем grayscale */
+}
+
+/* Также убедимся, что аватары партнеров тоже без фильтра */
+.partner-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    filter: none !important; /* Добавляем !important для перезаписи других стилей */
+}
+
+/* Удаляем стили для меню, так как кнопка не нужна */
+.menu-icon {
+    display: none; /* Скрываем меню полностью */
+}
+
+.dropdown-menu {
+    display: none; /* Скрываем выпадающее меню */
+}
+
+/* Добавляем CSS переменную для динамического расчета ширины карусели */
+:root {
+    --carousel-distance: -1365px; /* Значение по умолчанию, будет обновлено через JS */
+}
+
+@keyframes scrollCarousel {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-1400px);
+    }
+}
+
+/* Исправляем стили для кнопок действий */
+.action-buttons {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    display: flex;
+    gap: 20px;
+    width: auto;
+}
+
+.action-button {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.action-button:hover {
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Добавляем анимированный фон */
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(45deg, #0a0a0a, #151515);
+    overflow: hidden;
+}
+
+/* Добавляем светящиеся частицы для фона */
+.animated-background::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-image: 
+        radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.03) 2px, transparent 2px);
+    background-size: 30px 30px, 60px 60px;
+    animation: backgroundMove 40s linear infinite;
+}
+
+/* Добавляем мягкое свечение по краям */
+.animated-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(50, 50, 80, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 60%, rgba(50, 60, 90, 0.1) 0%, transparent 50%);
+}
+
+@keyframes backgroundMove {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(-5%, -5%) rotate(1deg);
+    }
+}
+
+/* Добавляем плавающие градиентные блики */
+.profile-container::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -20%;
+    width: 60%;
+    height: 80%;
+    background: radial-gradient(ellipse at center, rgba(50, 50, 70, 0.1) 0%, transparent 70%);
+    opacity: 0.5;
+    animation: floatGlow 15s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+.profile-container::after {
+    display: none;
+}
+
+@keyframes floatGlow {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        transform: translate(5%, 5%) scale(1.1);
+    }
+}
+
+/* Добавляем тонкую анимированную рамку для профиля */
+.profile-main::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.05) 50%,
+        transparent 100%
+    );
+    animation: borderGlow 10s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes borderGlow {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Добавляем едва заметное пульсирующее свечение вокруг профиля */
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 15px rgba(255, 255, 255, 0.03), 0 0 30px rgba(255, 255, 255, 0.02); }
+    50% { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.07), 0 0 20px rgba(255, 255, 255, 0.04), 0 0 40px rgba(255, 255, 255, 0.03); }
+    100% { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 15px rgba(255, 255, 255, 0.03), 0 0 30px rgba(255, 255, 255, 0.02); }
+}
+
+.profile-main {
+    animation: pulseGlow 5s ease-in-out infinite;
+}
+
+/* Добавляем тонкие световые акценты на страницу */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 40%;
+    background: radial-gradient(circle at top right, rgba(40, 40, 50, 0.2) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 40%;
+    height: 40%;
+    background: radial-gradient(circle at bottom left, rgba(40, 40, 60, 0.2) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Добавляем следящий элемент за курсором */
+.cursor-follower {
+    display: none;
+}
+
+/* Стили для интерактивных элементов при наведении */
+a:hover, button:hover {
+    cursor: pointer;
+}
+
+/* Дополнительные тонкие световые акценты для социальных иконок */
+.social-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.social-icon:hover::after {
+    width: 35px;
+    height: 35px;
+    opacity: 1;
+}
+
+/* Возвращаем стили профиля на рабочую версию и исправляем для локального изображения */
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(8px) brightness(0.3);
+    transform: scale(1.05);
+}
+
+/* Стили для формы заказа */
+.order-form-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.order-form-container {
+    width: 90%;
+    max-width: 600px;
+    background: rgba(15, 15, 15, 0.7);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.order-form-header {
+    padding: 20px 25px;
+    background: rgba(30, 30, 30, 0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.order-form-header h2 {
+    font-size: 1.4em;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.order-form-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.order-form-close:hover {
+    color: white;
+}
+
+.order-form-content {
+    padding: 25px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.form-group input, 
+.form-group textarea, 
+.form-group select {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 12px 15px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95em;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus, 
+.form-group select:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-submit {
+    text-align: right;
+}
+
+.submit-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.submit-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.submit-btn.primary {
+    background: linear-gradient(to right, rgba(60, 60, 80, 0.7), rgba(50, 50, 70, 0.7));
+}
+
+.submit-btn.primary:hover {
+    background: linear-gradient(to right, rgba(70, 70, 90, 0.8), rgba(60, 60, 80, 0.8));
+}
+
+/* Полностью удаляем все свечения и плавающие градиенты */
+.profile-container::before,
+.profile-container::after,
+body::before,
+body::after,
+.animated-background,
+.animated-background::before,
+.animated-background::after {
+    display: none !important;
+}
+
+/* Удаляем анимацию рамки профиля */
+.profile-main::before {
+    display: none;
+}
+
+/* Отключаем пульсирующее свечение профиля */
+.profile-main {
+    animation: none;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Обновляем стили для уведомления, чтобы оно всегда было по центру экрана */
+.notification-modal {
+    position: fixed; /* Меняем absolute на fixed */
+    top: 22%;
+    left: 40%;
+    background: rgba(15, 15, 15, 0.95);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 2000; /* Увеличиваем z-index */
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    text-align: center;
+    margin: 0;
+}
+
+/* Обновляем иконку уведомления */
+.notification-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.5em;
+}
+
+/* Обновляем заголовок и сообщение для соответствия стилю */
+.notification-title {
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.notification-message {
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9em;
+}
+
+/* Улучшенный стиль для блока с командой */
+.command-box {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+    padding: 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8em;
+    word-break: break-all;
+    margin: 15px 0;
+    text-align: center; /* Центрируем текст */
+    color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-sizing: border-box; /* Убеждаемся, что padding не увеличивает ширину */
+}
+
+/* Стиль для кнопки копирования, соответствующий общему стилю */
+.copy-button {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 8px 12px;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 5px 0 15px 0;
+    width: 100%;
+    font-weight: 400;
+}
+
+.copy-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Стиль кнопки для перехода к боту */
+.notification-button {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    font-weight: 400;
+    animation: none; /* Убираем анимацию пульсации */
+}
+
+.notification-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Убираем лишние стили и анимации */
+@keyframes pulseButton {
+    0% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+/* Стили для опций контакта */
+.contact-options {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-option {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.contact-option:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+/* Добавляем стиль для выбранного контакта */
+.contact-option.selected {
+    background: rgba(30, 40, 50, 0.5);
+    border-color: rgba(100, 100, 120, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-option i {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.contact-option.telegram i {
+    color: #0088cc;
+}
+
+.contact-option.discord i {
+    color: #7289da;
+}
+
+.contact-option span {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.8);
+} 
